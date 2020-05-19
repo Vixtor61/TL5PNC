@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +20,7 @@ public class MainController {
 	
 	
 
-	@RequestMapping("/estudiante")
+	@RequestMapping("/listado")
 	public ModelAndView  initMain(){
 
 				
@@ -42,6 +43,52 @@ public class MainController {
 
 		return mav;
 	}
+	
+	
+	@RequestMapping("/inicio")
+	public ModelAndView  inicio(){
+
+				
+				
+					
+		ModelAndView mav = new ModelAndView();
+		
+		
+		Estudiante estudiante = new Estudiante();
+	
+		mav.addObject("estudiante",estudiante);
+		
+		mav.setViewName("index");
+		
+
+		return mav;
+	}
+	
+	@RequestMapping("/guardar")
+	public ModelAndView  guardar(@ModelAttribute Estudiante estudiante){
+
+				
+				
+					
+		ModelAndView mav = new ModelAndView();
+		
+		
+
+		try {
+			
+			estudianteDAO.insert(estudiante);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	//	mav.addObject("estudiantes",estudiantes);
+		
+		mav.setViewName("index");
+		
+
+		return mav;
+	}
+	
+	
 	
 	
 	@RequestMapping(value="/mostrarEstudiante",method= RequestMethod.POST)

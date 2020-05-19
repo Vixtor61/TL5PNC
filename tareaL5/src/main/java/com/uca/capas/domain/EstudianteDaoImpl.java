@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
@@ -33,6 +34,7 @@ public class EstudianteDaoImpl implements EstudianteDao{
 		
 	}
 	@Override
+	@Transactional
 	public void insert(Estudiante estdiante){
 		entityManager.persist(estdiante);
 		

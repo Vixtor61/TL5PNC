@@ -30,7 +30,7 @@ public class JPAConfiguration {
 	public DataSource dataSource() {
 		DriverManagerDataSource datasource= new DriverManagerDataSource();
 		datasource.setDriverClassName("org.postgresql.Driver");
-		datasource.setUrl("jdbc:postgresql://127.0.0.1:5432/BDEscuela");
+		datasource.setUrl("jdbc:postgresql://127.0.0.1:5432/ESTUDIANTE");
 		datasource.setUsername("victor");
 		datasource.setPassword("");
 		return datasource;

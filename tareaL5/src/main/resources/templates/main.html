@@ -17,18 +17,12 @@
 	<tr>
 		<th th:text="${estudiante.nombre}"/>
 		<th th:text="${estudiante.apellido}"/>
-		<th th:text="${estudiante.edad}"/>
-		<th th:text="${estudiante.estadoDelegate}"/>
+		<th th:text="${estudiante.carnet}"/>
+		<th th:text="${estudiante.carrera}"/>
 	</tr>
 	</th:block>
 
 </table>
-<br>
-<form th:action="@{/mostrarEstudiante}" method="post">
- <label>Buscar por Codigo de estudiantes</label>
- <input type="number" name="codigo"> <br>
- <input type="submit" value="buscar">
-</form>
 
 
 </body>
